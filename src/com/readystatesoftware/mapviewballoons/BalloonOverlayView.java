@@ -30,7 +30,7 @@ import android.widget.TextView;
 
 
 /**
- * 点击地图上的点弹出的气球视图
+ * 鐐瑰嚮鍦板浘涓婄殑鐐瑰脊鍑虹殑姘旂悆瑙嗗浘
  * @author chunjiang.shieh
  *
  * @param <Item>
@@ -53,7 +53,7 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 		super(context);
 
 		setPadding(10, 0, 10, balloonBottomOffset);
-		
+
 		layout = new LimitLinearLayout(context);
 		layout.setVisibility(VISIBLE);
 
@@ -75,15 +75,15 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 	 * @param parent - The root layout into which you must inflate your view.
 	 */
 	protected void setupView(Context context, final ViewGroup parent) {
-		
+
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View v = inflater.inflate(R.layout.balloon_overlay, parent);
 		title = (TextView) v.findViewById(R.id.balloon_item_title);
 		snippet = (TextView) v.findViewById(R.id.balloon_item_snippet);
-		
+
 	}
-	
+
 	/**
 	 * Sets the view data from a given overlay item.
 	 * 
@@ -93,7 +93,7 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 		layout.setVisibility(VISIBLE);
 		setBalloonData(item, layout);
 	}
-	
+
 	/**
 	 * Sets the view data from a given overlay item. Override this method to create
 	 * your own data/view mappings.
@@ -117,11 +117,11 @@ public class BalloonOverlayView<Item extends OverlayItem> extends FrameLayout {
 			snippet.setVisibility(GONE);
 		}
 	}
-	
+
 	private class LimitLinearLayout extends LinearLayout {
 
 	    private static final int MAX_WIDTH_DP = 280;
-	    
+
 	    final float SCALE = getContext().getResources().getDisplayMetrics().density;
 
 	    public LimitLinearLayout(Context context) {
